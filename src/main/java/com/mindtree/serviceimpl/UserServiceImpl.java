@@ -1,19 +1,24 @@
 package com.mindtree.serviceimpl;
 import java.util.List;
-import com.mindtree.controller.Config;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.mindtree.daoimpl.UserDaoImpl;
 import com.mindtree.entity.User;
 import com.mindtree.service.UserService;
 
 public class UserServiceImpl implements UserService
 {
+	ApplicationContext con = new ClassPathXmlApplicationContext("Beans.xml");  
+	UserDaoImpl userDao = con.getBean("a",UserDaoImpl.class);
+	
 	public String save(User u) 
 	{	
-		return Config.getUserDao().save(u);
+		return userDao.save(u);
 	}
 
 	public List<User> displayAll() 
 	{
-		return Config.getUserDao().displayAll();
+		return userDao.displayAll();
 	}
 
 	@Override

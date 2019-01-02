@@ -45,11 +45,4 @@
     <bean id="b" class="com.mindtree.daoimpl.LoginDaoImpl">  
     <property name="logintemplate" ref="template"></property>  
     </bean>  
-    
-    <bean id="c" class="com.mindtree.serviceimpl.UserServiceImpl">  </bean> 
-    
-    <bean id="d" class="com.mindtree.serviceimpl.LoginServiceImpl">  </bean>
-    
-    <bean id="e" class="com.mindtree.entity.Login">  </bean>
-    
 </beans>
